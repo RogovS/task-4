@@ -19,7 +19,7 @@ var io = require('socket.io').listen(server.io.configure(function () {
 		   io.set("pollingtion", 10);
 		}));
 
-		io.sockets.on('connection', function (socket) {
+			socket.on('connection', function (socket) {
 		   socket.emit('news');
 		   socket.on('my other event', function (data) {
 			  console.log(data);
