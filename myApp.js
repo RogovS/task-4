@@ -14,7 +14,7 @@ app.get('/', function (request, response) {
 
 app.use(express.static(__dirname + '/public'));
 
-/*var io = require('socket.io').listen(server.io.configure(function () {
+var io = require('socket.io').listen(server.io.configure(function () {
 		   io.set("transportsxhr-polling");
 		   io.set("pollingtion", 10);
 		}));
@@ -24,4 +24,4 @@ app.use(express.static(__dirname + '/public'));
 		   socket.on('myer event', function (data) {
 			  console.log(data);
 		   });
-		});*/
+		});
