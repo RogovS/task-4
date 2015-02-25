@@ -15,13 +15,13 @@ app.get('/', function (request, response) {
 app.use(express.static(__dirname + '/public'));
 
 var io = require('socket.io').listen(server.io.configure(function () {
-		   io.set("transportsxhr-polling");
-		   io.set("pollingtion", 10);
-		}));
+	io.set("transportsxhr-polling");
+	io.set("pollingtion", 10);
+}));
 
-		io.sockets.on('connection', function (socket) {
-		   socket.emit('news', { hello: 'world' });
-		   socket.on('my other event', function (data) {
-			  console.log(data);
-		   });
-		});
+io.sockets.on('connection', function (socket) {
+	socket.emit('news', { hello: 'world' });
+	socket.on('my other event', function (data) {
+		console.log(data);
+	 });
+});
