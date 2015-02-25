@@ -14,15 +14,15 @@ app.get('/', function (request, response) {
 
 app.use(express.static(__dirname + '/public'));
 
-var io = require('socket.io').listen(server);
-io.on('connection', function () {
+var io = require('socket.io').listen(app);
+io.configure(function () {
 	io.set('transports',['xhr-polling']);
 	io.set("polling duration", 10);
 });
 
-/*io.sockets.on('connection', function (socket) {
+io.sockets.on('connection', function (socket) {
 	socket.emit('news', { hello: 'world' });
 	socket.on('my other event', function (data) {
 		console.log(data);
 	 });
-});*/
+});
