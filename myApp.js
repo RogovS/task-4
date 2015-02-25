@@ -19,7 +19,6 @@ io.on('connection', function() {
 	io.set('transports', ['xhr-polling']);
 	io.set('polling duration', 10);
 });
-server.listen(port);
 
 io.on('connection', function (socket) {
 	io.emit('news', { hello: 'world' });
