@@ -4,10 +4,6 @@ var app = express();
 var server = http.createServer(app);
 var port = process.env.PORT || 3000;
 
-server.listen(port, function() {
-   console.log('Listening' + port);
-});
-
 app.get('/', function (request, response) {
    response.sendfile(__dirname + '/index.html');
 });
@@ -18,6 +14,10 @@ var io = require('socket.io')(server);
 io.on('connection', function() {
 	io.set('transports', ['xhr-polling']);
 	io.set('polling duration', 10);
+});
+
+server.listen(port, function() {
+   console.log('Listening' + port);
 });
 
 io.on('connection', function (socket) {
