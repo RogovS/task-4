@@ -17,11 +17,13 @@ app.use(express.static(__dirname + '/public'));
 /*var io = require('socket.io').listen(server.io.configure(function () {
 	io.set("transportsxhr-polling");
 	io.set("pollingtion", 10);
-}));
+}));*/
+
+var io = require('socket.io').listen(server);
 
 io.sockets.on('connection', function (socket) {
 	socket.emit('news', { hello: 'world' });
 	socket.on('my other event', function (data) {
 		console.log(data);
 	 });
-});*/
+});
