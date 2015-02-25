@@ -14,8 +14,8 @@ app.get('/', function (request, response) {
 
 app.use(express.static(__dirname + '/public'));
 
-var io = require('socket.io')(server);
-/*io.on('connection', function() {
+/*var io = require('socket.io')(server);
+io.on('connection', function() {
 	io.set('transports', ['xhr-polling']);
 	io.set('polling duration', 10);
 });
