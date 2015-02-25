@@ -21,9 +21,9 @@ io.on('connection', function() {
 });
 server.listen(port);
 
-io.on('connection', function (socket) {
+/*io.on('connection', function (socket) {
 	io.emit('news', { hello: 'world' });
 	io.on('my other event', function (data) {
 		console.log(data);
 	 });
-});
+});*/
