@@ -14,18 +14,11 @@ app.get('/', function (request, response) {
 
 app.use(express.static(__dirname + '/public'));
 
-/*var io = require('socket.io').listen(server.io.configure(function () {
-	io.set("transportsxhr-polling");
-	io.set("pollingtion", 10);
-}));*/
-
-var server = require('http').createServer();
-var io = require('socket.io')(server);
-io.on('connection', function(socket){
-  socket.on('event', function(data){});
-  socket.on('disconnect', function(){});
+var io = require('socket.io').listen(server);
+io.configure(function () {
+	io.set('transports',['xhr-polling']);
+	io.set("polling duration", 10);
 });
-server.listen(3000);
 
 io.sockets.on('connection', function (socket) {
 	socket.emit('news', { hello: 'world' });
