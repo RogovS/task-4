@@ -7,7 +7,7 @@
 		<script src="/socket.io/socket.io.js"></script>
 		<script>
 			var socket = io('http://task-4.herokuapp.com');
-			socket.on('news', function (data) {
+			socket.on('connect', function (data) {
 			   console.log(data);
 			   socket.emit('my other event', { my: 'data' });
 			});
