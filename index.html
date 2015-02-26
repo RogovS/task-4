@@ -6,8 +6,7 @@
 		<script src="https://code.createjs.com/easeljs-0.8.0.min.js"></script>
 		<script src="/socket.io/socket.io.js"></script>
 		<script>
-			var io = require('socket.io-client');
-			var socket = io('http://task-4.herokuapp.com');
+			var io = require('socket.io-client'), socket = io('http://task-4.herokuapp.com');
 			socket.on('news', function (data) {
 			   console.log(data);
 			   socket.emit('my other event', { my: 'data' });
