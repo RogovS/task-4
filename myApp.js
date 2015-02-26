@@ -4,6 +4,7 @@ var app = express();
 var server = http.createServer(app);
 var port = process.env.PORT || 3000
 var io = require('socket.io')(server);
+var socket = require('socket.io-client')('http://task-4.herokuapp.com');
 
 server.listen(port, function() {
    console.log('Listening' + port);
