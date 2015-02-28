@@ -26,3 +26,26 @@ io.on('connection', function (socket) {
 		console.log(data);
 	 });
 });
+
+/*var mongo = require('mongoskin');
+var conn = mongo.db('mongodb://user:password@mongohq-user.mongohq.com:10006/databasename');
+
+conn.collection('collectionName').update(
+{
+   user:"userToUpdate"
+},
+{
+   user:"userToUpdate",
+   someData: "someNewData"
+},
+{
+   upsert:true
+});
+
+conn.collection('collectionName').findOne( {
+   user:"userToFind"
+},
+function(err, doc) {
+   if (err) { /* something is wrong */ }
+   if (doc) { var foundData = doc.someData; }
+});*/
