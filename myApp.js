@@ -44,8 +44,8 @@ conn.collection('collectionName').update(
 
 conn.collection('collectionName').findOne( {
    user:"userToFind"
-},
-function(err, doc) {
-   if (err) { /* something is wrong */ }
-   if (doc) { var foundData = doc.someData; }
-});*/
+},*/
+//function(err, doc) {
+//   if (err) { /* something is wrong */ }
+//   if (doc) { var foundData = doc.someData; }
+//});
