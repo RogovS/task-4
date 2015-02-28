@@ -27,8 +27,8 @@ io.on('connection', function (socket) {
 	 });
 });
 
-/*var mongo = require('mongoskin');
-var conn = mongo.db('mongodb://user:password@mongohq-user.mongohq.com:10006/databasename');
+var mongo = require('mongoskin');
+var conn = mongo.db('mongodb://RogovS:5mongo$*@RogovS.mongolab.com:10006/task-5');
 
 conn.collection('collectionName').update(
 {
@@ -44,8 +44,8 @@ conn.collection('collectionName').update(
 
 conn.collection('collectionName').findOne( {
    user:"userToFind"
-},*/
-//function(err, doc) {
-//   if (err) { /* something is wrong */ }
-//   if (doc) { var foundData = doc.someData; }
-//});
+},
+function(err, doc) {
+   if (err) { /* something is wrong */ }
+   if (doc) { var foundData = doc.someData; }
+});
