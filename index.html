@@ -15,12 +15,14 @@
 			    console.log(data)
 			    alert(data.ip);
 			};
-			
 		</script>
 		<script src="http://jsonipgeobase.appspot.com/?callback=foobar" type="text/javascript"></script>
 	</head>
 	<body onload="init();">
 		<canvas id="gameCanvas" width="600" height="500"></canvas>
+		<script type="text/javascript">
+			document.write(Date());
+		</script> 
 		<script>
 			function init() {
 				var canvas = document.getElementById('gameCanvas');
