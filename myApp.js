@@ -20,10 +20,13 @@ io.of('http://task-4.herokuapp.com').on('connection', function() {
 	io.set('polling duration', 10);
 });
 
+var ip, date;
+
 io.on('connection', function (socket) {
 	io.emit('news', { hello: 'world' });
-	io.on('my other event', function (data) {
+	io.on('ip', function (data) {
 		console.log(data);
+		ip = data.ip;
 	 });
 });
 
@@ -32,11 +35,11 @@ var conn = mongo.db('mongodb://RogovS:5mongo@ds049641.mongolab.com:49641/task-5'
 
 conn.collection('TestCollection').update(
 {
-   user:"userToUpdate"
+   ip:"ip"
 },
 {
-   user:"userToUpdate",
-   someData: "someNewData"
+   ip:"ip",
+   date: "someNewData"
 },
 {
    upsert:true
