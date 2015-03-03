@@ -45,6 +45,11 @@ conn.collection('TestCollection').update(
    upsert:true
 });
 
+var document = {name:"David", title:"About MongoDB"};
+  conn.collection.insert(document, {w: 1}, function(err, records){
+    console.log("Record added as "+records[0]._id);
+  });
+
 conn.collection('TestCollection').findOne( {
    user:"userToFind"
 },
