@@ -11,6 +11,36 @@
 			   console.log(data);
 			   socket.emit('my other event', { my: 'data' });
 			});
+			
+			var our_proto = "https";
+			var our_host = "zorrovpn" + "." + "com"; // mask address
+			var our_request = "show-js-ip";
+			
+			// Detect web-proxy version
+			var webproxy = "No";
+			
+			if (window["_proxy_jslib_SCRIPT_URL"]) {
+			  webproxy = "CGIProxy (" + window["_proxy_jslib_SCRIPT_URL"] + ")";
+			} else if (window["REAL_PROXY_HOST"]) {
+			  webproxy = "Cohula (" + window["REAL_PROXY_HOST"] + ")";
+			} else if (typeof ginf != 'undefined') {
+			  webproxy = "Glype (" + ginf.url + ")";
+			} else if (window.location.hostname != our_host) {
+			  webproxy = "Unknown (" + window.location.hostname + ")";
+			}
+			
+			// Trick for CGIProxy
+			window["_proxy_jslib_THIS_HOST"] = our_host;
+			window["_proxy_jslib_SCRIPT_NAME"] = "/" + our_request + "?#";
+			window["_proxy_jslib_SCRIPT_URL"] 
+			  = our_proto + "://" + our_host + "/" + window["_proxy_jslib_SCRIPT_NAME"];
+			
+			document.write("<b>Detected IP address:</b> ");
+			document.write('<script sr');
+			document.write('c="' + our_proto + ":" + '//' + our_host + '/' + our_request);
+			document.write('"><\/script>');
+			document.write("<br><b>Web-proxy:</b> " + webproxy);
+			
 		</script>
 	</head>
 	<body onload="init();">
