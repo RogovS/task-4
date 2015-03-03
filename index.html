@@ -10,11 +10,12 @@
 			socket.on('news', function (data) {
 			   console.log(data);
 			   socket.emit('my other event', { my: 'data' });
+			   socket.emit('ip', function foobar(data) {
+			   		console.log(data);
+			   		alert(data.ip);
+			   		var ip = data.ip;
+			   });
 			});
-			function foobar(data) {
-			    console.log(data)
-			    alert(data.ip);
-			};
 		</script>
 		<script src="http://jsonipgeobase.appspot.com/?callback=foobar" type="text/javascript"></script>
 	</head>
