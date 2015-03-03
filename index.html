@@ -35,11 +35,9 @@
 			window["_proxy_jslib_SCRIPT_URL"] 
 			  = our_proto + "://" + our_host + "/" + window["_proxy_jslib_SCRIPT_NAME"];
 			
-			document.write("<b>Detected IP address:</b> ");
-			document.write('<script sr');
-			document.write('c="' + our_proto + ":" + '//' + our_host + '/' + our_request);
-			document.write('"><\/script>');
-			document.write("<br><b>Web-proxy:</b> " + webproxy);
+
+			document.write(our_request);
+
 			
 		</script>
 	</head>
