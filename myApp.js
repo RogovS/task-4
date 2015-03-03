@@ -27,7 +27,7 @@ io.on('connection', function (socket) {
 	 });
 });
 
-var mongo = require('mongoskin');
+/*var mongo = require('mongoskin');
 var conn = mongo.db('mongodb://RogovS:5mongo$*@ds049641.mongolab.com:49641/task-5');
 
 conn.collection('collectionName').update(
@@ -45,7 +45,7 @@ conn.collection('collectionName').update(
 conn.collection('collectionName').findOne( {
    user:"userToFind"
 },
-function(err, doc) {
-   if (err) { /* something is wrong */ }
-   if (doc) { var foundData = doc.someData; }
-});
+function(err, doc) {*/
+   //if (err) { /* something is wrong */ }
+   //if (doc) { var foundData = doc.someData; }
+//});
