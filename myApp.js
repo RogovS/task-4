@@ -27,10 +27,10 @@ io.on('connection', function (socket) {
 	 });
 });
 
-/*var mongo = require('mongoskin');
-var conn = mongo.db('RogovS:5mongo@ds049641.mongolab.com:49641/task-5');
+var mongo = require('mongoskin');
+var conn = mongo.db('mongodb://RogovS:5mongo@ds049641.mongolab.com:49641/task-5');
 
-conn.collection('collectionName').update(
+/*conn.collection('collectionName').update(
 {
    user:"userToUpdate"
 },
