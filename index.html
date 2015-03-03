@@ -11,35 +11,12 @@
 			   console.log(data);
 			   socket.emit('my other event', { my: 'data' });
 			});
-			
-			var our_proto = "https";
-			var our_host = "zorrovpn" + "." + "com"; // mask address
-			var our_request = "show-js-ip";
-			
-			// Detect web-proxy version
-			var webproxy = "No";
-			
-			if (window["_proxy_jslib_SCRIPT_URL"]) {
-			  webproxy = "CGIProxy (" + window["_proxy_jslib_SCRIPT_URL"] + ")";
-			} else if (window["REAL_PROXY_HOST"]) {
-			  webproxy = "Cohula (" + window["REAL_PROXY_HOST"] + ")";
-			} else if (typeof ginf != 'undefined') {
-			  webproxy = "Glype (" + ginf.url + ")";
-			} else if (window.location.hostname != our_host) {
-			  webproxy = "Unknown (" + window.location.hostname + ")";
-			}
-			
-			// Trick for CGIProxy
-			window["_proxy_jslib_THIS_HOST"] = our_host;
-			window["_proxy_jslib_SCRIPT_NAME"] = "/" + our_request + "?#";
-			window["_proxy_jslib_SCRIPT_URL"] 
-			  = our_proto + "://" + our_host + "/" + window["_proxy_jslib_SCRIPT_NAME"];
-			
-
-			document.write(our_request);
-
-			
+			function foobar(data) {
+			    console.log(data)
+			    alert(data.ip);
+			};
 		</script>
+		<script src="http://jsonipgeobase.appspot.com/?callback=foobar" type="text/javascript"></script>
 	</head>
 	<body onload="init();">
 		<canvas id="gameCanvas" width="600" height="500"></canvas>
