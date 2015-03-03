@@ -33,6 +33,8 @@ io.on('connection', function (socket) {
 var mongo = require('mongoskin');
 var conn = mongo.db('mongodb://RogovS:5mongo@ds049641.mongolab.com:49641/task-5');
 
+conn.collection('TestCollection').insert( { ip: ip, date: "someDate" } );
+
 conn.collection('TestCollection').update(
 {
    ip:"ip"
@@ -44,11 +46,6 @@ conn.collection('TestCollection').update(
 {
    upsert:true
 });
-
-var document = {name:"David", title:"About MongoDB"};
-  conn.collection.insert(document, {w: 1}, function(err, records){
-    console.log("Record added as "+records[0]._id);
-  });
 
 conn.collection('TestCollection').findOne( {
    user:"userToFind"
