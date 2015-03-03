@@ -30,7 +30,7 @@ io.on('connection', function (socket) {
 var mongo = require('mongoskin');
 var conn = mongo.db('mongodb://RogovS:5mongo@ds049641.mongolab.com:49641/task-5');
 
-conn.collection('collectionName').update(
+conn.collection('TestCollection').update(
 {
    user:"userToUpdate"
 },
@@ -42,7 +42,7 @@ conn.collection('collectionName').update(
    upsert:true
 });
 
-conn.collection('collectionName').findOne( {
+conn.collection('TestCollection').findOne( {
    user:"userToFind"
 },
 function(err, doc) {
