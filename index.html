@@ -5,17 +5,17 @@
 		<title>Лаба 3</title>
 		<script src="https://code.createjs.com/easeljs-0.8.0.min.js"></script>
 		<script src="/socket.io/socket.io.js"></script>
-		<script src="http://jsonipgeobase.appspot.com/?callback=foobar" type="text/javascript">window['foobar'] = foobar;</script>
+		<script src="http://jsonipgeobase.appspot.com/?callback=foobar" type="text/javascript"></script>
 		<script>
 			var socket = io.connect('http://task-4.herokuapp.com');
 			socket.on('news', function (data) {
 			   console.log(data);
 			   socket.emit('my other event', { my: 'data' });
-			   socket.emit('ip', function foobar(data) {
+			   /*socket.emit('ip', function foobar(data) {
 			   		console.log(data);
 			   		alert(data.ip);
 			   		var ip = data.ip;
-			   });
+			   });*/
 			});
 		</script>
 	</head>
@@ -23,11 +23,10 @@
 		<canvas id="gameCanvas" width="600" height="500"></canvas>
 		<script type="text/javascript">
 			document.write(Date());
-			//window['foobar'] = foobar;
 			function foobar(data) {
 			   		console.log(data);
 			   		alert(data.ip);
-			   		var ip = data.ip;
+			   		//var ip = data.ip;
 			   }
 		</script> 
 		<script>
