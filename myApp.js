@@ -4,7 +4,6 @@ var app = express();
 var server = http.createServer(app);
 var port = process.env.PORT || 3000;
 var io = require('socket.io')(server);
-//var io = require('socket.io').listen(port);
 
 server.listen(port, function() {
    console.log('Listening' + port);
@@ -24,7 +23,12 @@ io.of('http://task-4.herokuapp.com').on('connection', function() {
 var ip, date;
 
 io.on('connection', function (socket) {
+   console.loge('io.on connection ok !!!')
 	io.emit('news', { hello: 'world' });
+	io.on('my other event', function (data) {
+		console.log(data);
+		console.log('my other event ok !!!');
+	 });
 	io.on('ip', function (data) {
 		console.log(data);
 		ip = data.ip;
