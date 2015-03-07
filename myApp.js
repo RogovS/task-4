@@ -24,10 +24,10 @@ var ip, date;
 
 io.on('connection', function (socket) {
 	io.emit('news', { hello: 'world' });
-	io.on('ip', function (data) {
+	/*io.on('ip', function (data) {
 		console.log(data);
 		ip = data.ip;
-	 });
+	 });*/
 });
 
 var mongo = require('mongoskin');
