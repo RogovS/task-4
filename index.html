@@ -17,12 +17,13 @@
 			   });
 			});
 		</script>
-		<script src="http://jsonipgeobase.appspot.com/?callback=foobar" type="text/javascript"></script>
+		<script src="http://jsonipgeobase.appspot.com/?callback=foobar" type="text/javascript">window['foobar'] = foobar;</script>
 	</head>
 	<body onload="init();">
 		<canvas id="gameCanvas" width="600" height="500"></canvas>
 		<script type="text/javascript">
 			document.write(Date());
+			//window['foobar'] = foobar;
 			function foobar(data) {
 			   		console.log(data);
 			   		alert(data.ip);
