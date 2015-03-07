@@ -23,7 +23,7 @@ io.of('http://task-4.herokuapp.com').on('connection', function() {
 var ip, date;
 
 io.on('connection', function (socket) {
-   console.loge('io.on connection ok !!!')
+   console.log('io.on connection ok !!!');
 	io.emit('news', { hello: 'world' });
 	io.on('my other event', function (data) {
 		console.log(data);
