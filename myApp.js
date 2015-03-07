@@ -15,7 +15,7 @@ app.get('/', function (request, response) {
 
 app.use(express.static(__dirname + '/public'));
 
-io/*.of('http://task-4.herokuapp.com')*/.on('connection', function() {
+/*io.of('http://task-4.herokuapp.com')*/io.sockets.on('connection', function() {
 //io.configure(function () {
 	io.set('transports', ['xhr-polling']);
 	io.set('polling duration', 10);
