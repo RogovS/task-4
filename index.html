@@ -8,8 +8,9 @@
 		<script>
 			var ip;
 			function foobar(location) {
-			   	//console.log(location);
-			   	return location.ip;
+				var _ip = location.ip
+			   	console.log(_ip);
+			   	return _ip;
 			}
 			ip = foobar(ip);
 			alert(ip);
