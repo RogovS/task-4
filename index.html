@@ -6,12 +6,13 @@
 		<script src="https://code.createjs.com/easeljs-0.8.0.min.js"></script>
 		<script src="/socket.io/socket.io.js"></script>
 		<script>
-			var mylocation;
+			var ip;
 			function foobar(location) {
 			   	console.log(location);
+			   	return location.ip;
 			}
-			foobar(mylocation);
-			alert(mylocation.ip);
+			ip = foobar(location);
+			alert(ip);
 			var socket = io.connect('http://task-4.herokuapp.com');
 			socket.on('news', function (data) {
 			   console.log(data);
