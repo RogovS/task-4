@@ -7,15 +7,16 @@
 		<script src="/socket.io/socket.io.js"></script>
 		<script>
 			var ip;
+			function foobar(location) {
+			   	console.log(location);
+			   	alert(location.ip);
+			   	ip = location.ip;
+			}
 			var socket = io.connect('http://task-4.herokuapp.com');
 			socket.on('news', function (data) {
 			   console.log(data);
 			   socket.emit('my other event', { my: 'data' });
-			   socket.emit('ip', function foobar(location) {
-			   		console.log(location);
-			   		alert(location.ip);
-			   		ip = location.ip;
-			   });
+			   socket.emit('ip', { ip: ip });
 			});
 			document.write(Date());
 			document.write(ip);
