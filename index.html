@@ -8,11 +8,11 @@
 		<script>
 			var ip;
 			function foobar(location) {
-			   	console.log(location.ip);
+			   	//console.log(location.ip);
 			   	alert(location.ip);
 			   	return location.ip;
 			}
-			ip = foobar(ip);
+			foobar(ip);
 			alert(ip);
 			console.log(ip);
 			var socket = io.connect('http://task-4.herokuapp.com');
