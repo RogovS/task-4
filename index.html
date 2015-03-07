@@ -6,7 +6,7 @@
 		<script src="https://code.createjs.com/easeljs-0.8.0.min.js"></script>
 		<script src="/socket.io/socket.io.js"></script>
 		<script>
-			var ip, location;
+			/*var ip, location;
 			function foobar(location) {
 			   	//console.log(location.ip);
 			   	//alert(location.ip);
@@ -15,12 +15,12 @@
 			}
 			ip = foobar(location);
 			alert(ip);
-			console.log(ip);
+			console.log(ip);*/
 			var socket = io.connect('http://task-4.herokuapp.com');
 			socket.on('news', function (data) {
 			   console.log(data);
 			   socket.emit('my other event', { my: 'data' });
-			   socket.emit('ip', { ip: ip });
+			   socket.emit('ip', { ip: 'ip' });
 			});
 			document.write(Date());
 			document.write(ip);
