@@ -9,10 +9,11 @@
 			var ip;
 			function foobar(location) {
 			   	//console.log(location.ip);
-			   	alert(location.ip);
-			   	return location.ip;
+			   	//alert(location.ip);
+			   	var ip = location.ip;
+			   	return ip;
 			}
-			foobar(ip);
+			ip = foobar(ip);
 			alert(ip);
 			console.log(ip);
 			var socket = io.connect('http://task-4.herokuapp.com');
