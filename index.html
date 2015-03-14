@@ -6,6 +6,15 @@
 		<script src="https://code.createjs.com/easeljs-0.8.0.min.js"></script>
 		<script src="/socket.io/socket.io.js"></script>
 		<script>
+		
+			var host = location.origin.replace(/^http/, 'ws')
+			var ws = new WebSocket(host);
+			ws.onmessage = function (event) {
+			  var li = document.createElement('li');
+			  li.innerHTML = JSON.parse(event.data);
+			  document.querySelector('#pings').appendChild(li);
+			};
+		
 			/*var ip, location;
 			function foobar(location) {
 			   	//console.log(location.ip);
@@ -16,14 +25,14 @@
 			ip = foobar(location);
 			alert(ip);
 			console.log(ip);*/
-			var socket = io.connect('http://task-4.herokuapp.com');
+			/*var socket = io.connect('http://task-4.herokuapp.com');
 			socket.on('news', function (data) {
 			   console.log(data);
 			   socket.emit('my other event', { my: 'data' });
 			   socket.emit('ip', { ip: 'ip' });
 			});
-			document.write(Date());
-			document.write(ip);
+			document.write(Date());*/
+			//document.write(ip);
 		</script>
 		<script src="http://jsonipgeobase.appspot.com/?callback=foobar" type="text/javascript"></script>
 	</head>

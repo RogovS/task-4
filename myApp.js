@@ -1,45 +1,51 @@
-var express = require('express');
+/*var express = require('express');
 var http = require('http');
 var app = express();
 var server = http.createServer(app);
-var port = process.env.PORT || 3000;
-var io = require('socket.io').listen(server);
+var port = process.env.PORT || 3000;*/
 
-server.listen(port, function() {
-   console.log('Listening' + port);
-});
+/////////////////////////////////////////////
+
+var WebSocketServer = require("ws").Server;
+var http = require("http");
+var express = require("express");
+var app = express();
+var port = process.env.PORT || 5000;
 
 app.get('/', function (request, response) {
    response.sendfile(__dirname + '/index.html');
 });
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + "/public"));
 
-/*io.of('http://task-4.herokuapp.com')*/io.sockets.on('connection', function() {
-//io.configure(function () {
-	io.set('transports', ['xhr-polling']);
-	io.set('polling duration', 10);
+var server = http.createServer(app);
+server.listen(port);
+
+console.log("http server listening on %d", port);
+
+var wss = new WebSocketServer({server: server});
+console.log("websocket server created");
+
+wss.on("connection", function(ws) {
+  var id = setInterval(function() {
+    ws.send(JSON.stringify(new Date()), function() {  });
+  }, 1000);
+
+  console.log("websocket connection open");
+
+  ws.on("close", function() {
+    console.log("websocket connection close");
+    clearInterval(id);
+  });
 });
 
-var ip, date;
 
-io.on('connection', function (socket) {
-   console.log('io.on connection ok !!!');
-	io.emit('news', { hello: 'world' });
-	io.on('my other event', function (data) {
-		console.log(data);
-		console.log('my other event ok !!!');
-	 });
-	io.on('ip', function (data) {
-		console.log(data);
-		ip = data.ip;
-	 });
-});
+/////////////////////////////////////////////
 
 var mongo = require('mongoskin');
 var conn = mongo.db('mongodb://RogovS:5mongo@ds049641.mongolab.com:49641/task-5');
 
-conn.collection('TestCollection').insert( { ip: ip, date: "someDate" } );
+conn.collection('TestCollection').insert( { ip: 'ip', date: "someDate" } );
 
 conn.collection('TestCollection').update(
 {
