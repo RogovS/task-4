@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<title>Лаба 3</title>
 		<script src="https://code.createjs.com/easeljs-0.8.0.min.js"></script>
-		<script src="/socket.io/socket.io.js"></script>
+		<!--<script src="/socket.io/socket.io.js"></script>-->
 		<script>
 		
 			var host = location.origin.replace(/^http/, 'ws');
@@ -34,10 +34,14 @@
 			document.write(Date());*/
 			//document.write(ip);
 		</script>
-		<script src="http://jsonipgeobase.appspot.com/?callback=foobar" type="text/javascript"></script>
+		<!--<script src="http://jsonipgeobase.appspot.com/?callback=foobar" type="text/javascript"></script>-->
 	</head>
 	<body onload="init();">
 		<canvas id="gameCanvas" width="600" height="500"></canvas>
+		<ul id="pings">
+
+		</ul>
+
 		<script>
 			function init() {
 				var canvas = document.getElementById('gameCanvas');
