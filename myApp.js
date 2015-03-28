@@ -24,6 +24,23 @@ wss.on("connection", function(ws) {
       data: "hello world"
   }
   ws.send(JSON.stringify(msg));
+  
+    var mongo = require('mongoskin');
+    var conn = mongo.db('mongodb://RogovS:5mongo@ds049641.mongolab.com:49641/task-5');
+    
+    //conn.collection('TestCollection').insert( { ip: 'ip', date: "someDate" } );
+    
+    conn.collection('TestCollection').update(
+    {
+       ip:"ip"
+    },
+    {
+       ip:"ip",
+       date: "someNewDate"
+    },
+    {
+       upsert:true
+    });
  
   ws.onmessage = function(d) {
     msg = JSON.parse(d.data);
@@ -34,22 +51,7 @@ wss.on("connection", function(ws) {
 
 /////////////////////////////////////////////
 
-var mongo = require('mongoskin');
-var conn = mongo.db('mongodb://RogovS:5mongo@ds049641.mongolab.com:49641/task-5');
 
-conn.collection('TestCollection').insert( { ip: 'ip', date: "someDate" } );
-
-conn.collection('TestCollection').update(
-{
-   ip:"ip"
-},
-{
-   ip:"ip",
-   date: "someNewDate"
-},
-{
-   upsert:true
-});
 
 /*conn.collection('TestCollection').findOne( {
    user:"userToFind"
