@@ -6,13 +6,6 @@
 		<script src="https://code.createjs.com/easeljs-0.8.0.min.js"></script>
 		<!--<script src="/socket.io/socket.io.js"></script>-->
 		<script>
-		
-		
-			ws.onmessage = function (event) {
-			  var li = document.createElement('li');
-			  li.innerHTML = JSON.parse(event.data);
-			  document.querySelector('#pings').appendChild(li);
-			};
 			
 			var host = location.origin.replace(/^http/, 'ws');
 			var ws = new WebSocket(host);
