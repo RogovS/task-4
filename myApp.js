@@ -32,10 +32,10 @@ wss.on("connection", function(ws) {
     
     conn.collection('TestCollection').update(
     {
-       ip:"ip"
+       ip1:"ip1"
     },
     {
-       ip:"ip",
+       ip1:"ip1",
        date: "someNewDate"
     },
     {
