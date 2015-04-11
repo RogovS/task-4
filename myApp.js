@@ -35,17 +35,29 @@ wss.on("connection", function(ws) {
 /////////////////////////////////////////////
 
     var mongo = require('mongoskin');
-    var conn = mongo.db('mongodb://RogovS:5mongo@ds049641.mongolab.com:49641/task-5');
+    var db = mongo.db('mongodb://RogovS:5mongo@ds049641.mongolab.com:49641/task-5');
     
     //conn.collection('TestCollection').insert( { ip: 'ip', date: "someDate" } );
     
-    conn.createCollection("test", function(err, collection){
+    /*conn.createCollection("test", function(err, collection){
       collection.insert({"test":"value"});
-    });
+    });*/
     
     //conn.collection.insert();
     
-    conn.collection('TestCollection').update(
+    db.collection('TestCollection').update(
+        {
+            id:"123"
+            
+        },
+        {
+            ip:"123.123.123.123",
+            date:"11.04.2015"
+            
+        }
+    );
+    
+    db.collection('TestCollection').update(
     {
        ip1:"ip1"
     },
