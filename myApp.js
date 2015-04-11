@@ -36,6 +36,7 @@ wss.on("connection", function(ws) {
 
     var mongo = require('mongoskin');
     var db = mongo.db('mongodb://RogovS:5mongo@ds049641.mongolab.com:49641/task-5');
+    console.log("проверка");
     
     //conn.collection('TestCollection').insert( { ip: 'ip', date: "someDate" } );
     
