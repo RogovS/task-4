@@ -2,7 +2,7 @@ var express = require('express');
 var http = require('http');
 var app = express();
 var server = http.createServer(app);
-var port = 3000;
+var port = process.env.PORT || 3000;
 
 var mongo = require('mongoskin');
 var db = mongo.db('mongodb://RogovS:5mongo@ds049641.mongolab.com:49641/task-5');
@@ -20,7 +20,23 @@ app.use(express.static(__dirname + '/public'));
 var WebSocketServer = require("ws").Server;
 var wss = new WebSocketServer({server: server});
 
-console.log("проверка " + db.collection('TestCollection').findOne({ip:"123"}));
+/*console.log("проверка " + db.collection('TestCollection').findOne({ip:"123"}));
+
+db.collection('TestCollection').update(
+        {
+            id:"123"
+            
+        },
+        {
+            id:"123",
+            ip:"123.123.123.123",
+            date:"11.04.2015"
+            
+        },
+        {
+            upsert:true
+        }
+    );*/
  
 wss.on("connection", function(ws) {
   console.log("websocket connection open");
