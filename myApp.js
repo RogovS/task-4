@@ -39,6 +39,12 @@ wss.on("connection", function(ws) {
     
     //conn.collection('TestCollection').insert( { ip: 'ip', date: "someDate" } );
     
+    conn.createCollection("test", function(err, collection){
+      collection.insert({"test":"value"});
+    });
+    
+    //conn.collection.insert();
+    
     conn.collection('TestCollection').update(
     {
        ip1:"ip1"
