@@ -54,10 +54,13 @@ wss.on("connection", function(ws) {
             ip:"123.123.123.123",
             date:"11.04.2015"
             
+        },
+        {
+            upsert:true
         }
     );
     
-    db.collection('TestCollection').update(
+    /*db.collection('TestCollection').update(
     {
        ip1:"ip1"
     },
@@ -67,7 +70,7 @@ wss.on("connection", function(ws) {
     },
     {
        upsert:true
-    });
+    });*/
 
 /*conn.collection('TestCollection').findOne( {
    user:"userToFind"
