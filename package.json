@@ -1,5 +1,5 @@
 {
-  "name": "myApp",
+  "name": "task-4",
   "version": "0.0.1",
   "dependencies": {
     "express": "4.x",
