@@ -51,6 +51,7 @@ wss.on("connection", function(ws) {
             
         },
         {
+            id:"123",
             ip:"123.123.123.123",
             date:"11.04.2015"
             
