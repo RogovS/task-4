@@ -4,10 +4,10 @@ var app = express();
 var server = http.createServer(app);
 var port = process.env.PORT || 3000;
 
-//var mongo = require('mongoskin');
-//var db = mongo.db('mongodb://RogovS:5mongo@ds049641.mongolab.com:49641/task-5');
+var mongo = require('mongoskin');
+var db = mongo.db('mongodb://RogovS:5mongo@ds049641.mongolab.com:49641/task-5');
 
-var mongodb = require('mongodb');
+/*var mongodb = require('mongodb');
 var MongoClient = mongodb.MongoClient; 
 var url = 'mongodb://RogovS:5mongo@ds049641.mongolab.com:49641/task-5'; 
 MongoClient.connect(url, function (err, db) { 
@@ -16,7 +16,7 @@ MongoClient.connect(url, function (err, db) {
     } 
     else { 
         console.log('Connection established to', url);
-        db.collection('TestCollection').update(
+        MongoClient.collection('TestCollection').update(
         {
             id:"123"
             
@@ -33,8 +33,7 @@ MongoClient.connect(url, function (err, db) {
     );
         db.close(); 
     } 
-});
-db.close(); } });
+});*/
  
 server.listen(port, function() {
    console.log('Listening on ' + port);
