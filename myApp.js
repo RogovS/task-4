@@ -4,8 +4,37 @@ var app = express();
 var server = http.createServer(app);
 var port = process.env.PORT || 3000;
 
-var mongo = require('mongoskin');
-var db = mongo.db('mongodb://RogovS:5mongo@ds049641.mongolab.com:49641/task-5');
+//var mongo = require('mongoskin');
+//var db = mongo.db('mongodb://RogovS:5mongo@ds049641.mongolab.com:49641/task-5');
+
+var mongodb = require('mongodb');
+var MongoClient = mongodb.MongoClient; 
+var url = 'mongodb://RogovS:5mongo@ds049641.mongolab.com:49641/task-5'; 
+MongoClient.connect(url, function (err, db) { 
+    if (err) { 
+        console.log('Unable to connect to the mongoDB server. Error:', err); 
+    } 
+    else { 
+        console.log('Connection established to', url);
+        db.collection('TestCollection').update(
+        {
+            id:"123"
+            
+        },
+        {
+            id:"123",
+            ip:"123.123.123.123",
+            date:"11.04.2015"
+            
+        },
+        {
+            upsert:true
+        }
+    );
+        db.close(); 
+    } 
+});
+db.close(); } });
  
 server.listen(port, function() {
    console.log('Listening on ' + port);
