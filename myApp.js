@@ -19,6 +19,8 @@ app.use(express.static(__dirname + '/public'));
 
 var WebSocketServer = require("ws").Server;
 var wss = new WebSocketServer({server: server});
+
+console.log("проверка");
  
 wss.on("connection", function(ws) {
   console.log("websocket connection open");
