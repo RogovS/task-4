@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "dependencies": {
     "express": "4.x",
-    "mongodb": "2.6.9",
+    "mongodb": "2.6.*",
     "mongoskin": "*",
     "ws": "*"
   },

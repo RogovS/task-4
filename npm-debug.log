@@ -1,0 +1,151 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/home/ubuntu/.nvm/v0.10.35/bin/node',
+1 verbose cli   '/home/ubuntu/.nvm/v0.10.35/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'mongodb',
+1 verbose cli   '2.6.9' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.35
+4 warn package.json myApp@0.0.1 No description
+5 warn package.json myApp@0.0.1 No repository field.
+6 warn package.json myApp@0.0.1 No README data
+7 verbose readDependencies using package.json deps
+8 verbose cache add [ 'mongodb@2.6.9', null ]
+9 verbose cache add name=undefined spec="mongodb@2.6.9" args=["mongodb@2.6.9",null]
+10 verbose parsed url { protocol: null,
+10 verbose parsed url   slashes: null,
+10 verbose parsed url   auth: null,
+10 verbose parsed url   host: null,
+10 verbose parsed url   port: null,
+10 verbose parsed url   hostname: null,
+10 verbose parsed url   hash: null,
+10 verbose parsed url   search: null,
+10 verbose parsed url   query: null,
+10 verbose parsed url   pathname: 'mongodb@2.6.9',
+10 verbose parsed url   path: 'mongodb@2.6.9',
+10 verbose parsed url   href: 'mongodb@2.6.9' }
+11 verbose cache add [ '2.6.9', null ]
+12 verbose cache add name=undefined spec="2.6.9" args=["2.6.9",null]
+13 verbose parsed url { protocol: null,
+13 verbose parsed url   slashes: null,
+13 verbose parsed url   auth: null,
+13 verbose parsed url   host: null,
+13 verbose parsed url   port: null,
+13 verbose parsed url   hostname: null,
+13 verbose parsed url   hash: null,
+13 verbose parsed url   search: null,
+13 verbose parsed url   query: null,
+13 verbose parsed url   pathname: '2.6.9',
+13 verbose parsed url   path: '2.6.9',
+13 verbose parsed url   href: '2.6.9' }
+14 verbose cache add name="mongodb" spec="2.6.9" args=["mongodb","2.6.9"]
+15 verbose parsed url { protocol: null,
+15 verbose parsed url   slashes: null,
+15 verbose parsed url   auth: null,
+15 verbose parsed url   host: null,
+15 verbose parsed url   port: null,
+15 verbose parsed url   hostname: null,
+15 verbose parsed url   hash: null,
+15 verbose parsed url   search: null,
+15 verbose parsed url   query: null,
+15 verbose parsed url   pathname: '2.6.9',
+15 verbose parsed url   path: '2.6.9',
+15 verbose parsed url   href: '2.6.9' }
+16 verbose addNamed [ 'mongodb', '2.6.9' ]
+17 verbose addNamed [ '2.6.9', '2.6.9' ]
+18 silly lockFile f6fad5b1-mongodb-2-6-9 mongodb@2.6.9
+19 verbose lock mongodb@2.6.9 /home/ubuntu/.npm/f6fad5b1-mongodb-2-6-9.lock
+20 silly lockFile 591d71e9-2-6-9 2.6.9
+21 verbose lock 2.6.9 /home/ubuntu/.npm/591d71e9-2-6-9.lock
+22 silly lockFile 591d71e9-2-6-9 2.6.9
+23 silly lockFile 591d71e9-2-6-9 2.6.9
+24 verbose addNamed [ '2.6.9', '' ]
+25 verbose addNamed [ null, '*' ]
+26 silly lockFile d72daf72-2-6-9 2.6.9@
+27 verbose lock 2.6.9@ /home/ubuntu/.npm/d72daf72-2-6-9.lock
+28 verbose request where is /mongodb
+29 verbose request registry https://registry.npmjs.org/
+30 verbose request id 2c0262221df96d77
+31 verbose url raw /mongodb
+32 verbose url resolving [ 'https://registry.npmjs.org/', './mongodb' ]
+33 verbose url resolved https://registry.npmjs.org/mongodb
+34 verbose request where is https://registry.npmjs.org/mongodb
+35 info trying registry request attempt 1 at 06:07:17
+36 verbose etag "CNBKUBEIS4J2AJF18WOARQE2K"
+37 http GET https://registry.npmjs.org/mongodb
+38 silly addNameRange { name: '2.6.9', range: '*', hasData: false }
+39 verbose request where is /2.6.9
+40 verbose request registry https://registry.npmjs.org/
+41 verbose url raw /2.6.9
+42 verbose url resolving [ 'https://registry.npmjs.org/', './2.6.9' ]
+43 verbose url resolved https://registry.npmjs.org/2.6.9
+44 verbose request where is https://registry.npmjs.org/2.6.9
+45 info trying registry request attempt 1 at 06:07:17
+46 http GET https://registry.npmjs.org/2.6.9
+47 http 404 https://registry.npmjs.org/2.6.9
+48 verbose headers { date: 'Sat, 11 Apr 2015 06:07:17 GMT',
+48 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+48 verbose headers   'content-type': 'application/json',
+48 verbose headers   'cache-control': 'max-age=0',
+48 verbose headers   'content-length': '51',
+48 verbose headers   'accept-ranges': 'bytes',
+48 verbose headers   via: '1.1 varnish',
+48 verbose headers   age: '0',
+48 verbose headers   'x-served-by': 'cache-lcy1127-LCY',
+48 verbose headers   'x-cache': 'MISS',
+48 verbose headers   'x-cache-hits': '0',
+48 verbose headers   'x-timer': 'S1428732437.372672,VS0,VE356',
+48 verbose headers   'keep-alive': 'timeout=10, max=50',
+48 verbose headers   connection: 'Keep-Alive' }
+49 silly registry.get cb [ 404,
+49 silly registry.get   { date: 'Sat, 11 Apr 2015 06:07:17 GMT',
+49 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+49 silly registry.get     'content-type': 'application/json',
+49 silly registry.get     'cache-control': 'max-age=0',
+49 silly registry.get     'content-length': '51',
+49 silly registry.get     'accept-ranges': 'bytes',
+49 silly registry.get     via: '1.1 varnish',
+49 silly registry.get     age: '0',
+49 silly registry.get     'x-served-by': 'cache-lcy1127-LCY',
+49 silly registry.get     'x-cache': 'MISS',
+49 silly registry.get     'x-cache-hits': '0',
+49 silly registry.get     'x-timer': 'S1428732437.372672,VS0,VE356',
+49 silly registry.get     'keep-alive': 'timeout=10, max=50',
+49 silly registry.get     connection: 'Keep-Alive' } ]
+50 silly lockFile d72daf72-2-6-9 2.6.9@
+51 silly lockFile d72daf72-2-6-9 2.6.9@
+52 http 200 https://registry.npmjs.org/mongodb
+53 silly registry.get cb [ 200,
+53 silly registry.get   { date: 'Sat, 11 Apr 2015 06:07:17 GMT',
+53 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+53 silly registry.get     etag: '"7ZO8X69521ZY1KFK3PYUIZD5B"',
+53 silly registry.get     'content-type': 'application/json',
+53 silly registry.get     'cache-control': 'max-age=60',
+53 silly registry.get     'content-length': '442428',
+53 silly registry.get     'accept-ranges': 'bytes',
+53 silly registry.get     via: '1.1 varnish',
+53 silly registry.get     age: '0',
+53 silly registry.get     'x-served-by': 'cache-ams4147-AMS',
+53 silly registry.get     'x-cache': 'HIT',
+53 silly registry.get     'x-cache-hits': '1',
+53 silly registry.get     'x-timer': 'S1428732437.366670,VS0,VE384',
+53 silly registry.get     vary: 'Accept',
+53 silly registry.get     'keep-alive': 'timeout=10, max=50',
+53 silly registry.get     connection: 'Keep-Alive' } ]
+54 silly lockFile f6fad5b1-mongodb-2-6-9 mongodb@2.6.9
+55 silly lockFile f6fad5b1-mongodb-2-6-9 mongodb@2.6.9
+56 error 404 404 Not Found: 2.6.9
+56 error 404
+56 error 404 '2.6.9' is not in the npm registry.
+56 error 404 You should bug the author to publish it
+56 error 404 It was specified as a dependency of 'myApp'
+56 error 404
+56 error 404 Note that you can also install from a
+56 error 404 tarball, folder, or http url, or git url.
+57 error System Linux 3.14.13-c9
+58 error command "/home/ubuntu/.nvm/v0.10.35/bin/node" "/home/ubuntu/.nvm/v0.10.35/bin/npm" "install" "mongodb" "2.6.9"
+59 error cwd /home/ubuntu/workspace
+60 error node -v v0.10.35
+61 error npm -v 1.4.28
+62 error code E404
+63 verbose exit [ 1, true ]
