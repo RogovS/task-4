@@ -2,7 +2,7 @@ var express = require('express');
 var http = require('http');
 var app = express();
 var server = http.createServer(app);
-var port = process.env.PORT || 3000;
+var port = 3000;
 
 var mongo = require('mongoskin');
 var db = mongo.db('mongodb://RogovS:5mongo@ds049641.mongolab.com:49641/task-5');
@@ -20,7 +20,7 @@ app.use(express.static(__dirname + '/public'));
 var WebSocketServer = require("ws").Server;
 var wss = new WebSocketServer({server: server});
 
-console.log("проверка");
+console.log("проверка " + db.collection('TestCollection').findOne({ip:"123"}));
  
 wss.on("connection", function(ws) {
   console.log("websocket connection open");
@@ -36,6 +36,11 @@ wss.on("connection", function(ws) {
     console.log(msg);
   };
   
+});
+
+/////////////////////////////////////////////
+
+
     console.log("проверка");
     
     db.collection('TestCollection').update(
@@ -53,10 +58,7 @@ wss.on("connection", function(ws) {
             upsert:true
         }
     );
-  
-});
 
-/////////////////////////////////////////////
 
     /*var mongo = require('mongoskin');
     var db = mongo.db('mongodb://RogovS:5mongo@ds049641.mongolab.com:49641/task-5');
