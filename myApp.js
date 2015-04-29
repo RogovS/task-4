@@ -24,7 +24,7 @@ wss.on("connection", function(ws) {
       data: "hello world"
   };
   ws.send(JSON.stringify(msg));
- 
+ console.log("websocket messsage received");
   ws.onmessage = function(d) {
     msg = JSON.parse(d.data);
     console.log("websocket messsage received");
@@ -47,129 +47,5 @@ db.collection('TestCollection').update(
 },
 {
    upsert:true
-},
-function(err, doc) {
-   if (err) { console.log("Ошибка соединения!"); }
-   if (doc) { var foundData = doc.someData; }
 });
 console.log('test');
-
-/*var mongodb = require('mongodb');
-var MongoClient = mongodb.MongoClient; 
-var url = 'mongodb://RogovS:5mongo@ds049641.mongolab.com:49641/task-5'; 
-MongoClient.connect(url, function (err, db) { 
-    if (err) { 
-        console.log('Unable to connect to the mongoDB server. Error:', err); 
-    } 
-    else { 
-        console.log('Connection established to', url);
-        MongoClient.collection('TestCollection').update(
-        {
-            id:"123"
-            
-        },
-        {
-            id:"123",
-            ip:"123.123.123.123",
-            date:"11.04.2015"
-            
-        },
-        {
-            upsert:true
-        }
-    );
-        db.close(); 
-    } 
-});*/
- 
-
-
-/*console.log("проверка " + db.collection('TestCollection').findOne({ip:"123"}));
-
-db.collection('TestCollection').update(
-        {
-            id:"123"
-            
-        },
-        {
-            id:"123",
-            ip:"123.123.123.123",
-            date:"11.04.2015"
-            
-        },
-        {
-            upsert:true
-        }
-    );*/
- 
-
-
-/////////////////////////////////////////////
-
-
-    /*console.log("проверка");
-    
-    db.collection('TestCollection').update(
-        {
-            id:"123"
-            
-        },
-        {
-            id:"123",
-            ip:"123.123.123.123",
-            date:"11.04.2015"
-            
-        },
-        {
-            upsert:true
-        }
-    );*/
-
-
-    /*var mongo = require('mongoskin');
-    var db = mongo.db('mongodb://RogovS:5mongo@ds049641.mongolab.com:49641/task-5');
-    console.log("проверка");*/
-    
-    //conn.collection('TestCollection').insert( { ip: 'ip', date: "someDate" } );
-    
-    /*conn.createCollection("test", function(err, collection){
-      collection.insert({"test":"value"});
-    });*/
-    
-    //conn.collection.insert();
-    
-    /*db.collection('TestCollection').update(
-        {
-            id:"123"
-            
-        },
-        {
-            id:"123",
-            ip:"123.123.123.123",
-            date:"11.04.2015"
-            
-        },
-        {
-            upsert:true
-        }
-    );*/
-    
-    /*db.collection('TestCollection').update(
-    {
-       ip1:"ip1"
-    },
-    {
-       ip1:"ip1",
-       date: "someNewDate"
-    },
-    {
-       upsert:true
-    });*/
-
-/*conn.collection('TestCollection').findOne( {
-   user:"userToFind"
-},
-function(err, doc) {
-   if (err) { console.log("Ошибка соединения!"); }
-   if (doc) { var foundData = doc.someData; }
-});*/
