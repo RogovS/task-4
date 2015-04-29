@@ -16,6 +16,8 @@ app.use(express.static(__dirname + '/public'));
 
 var WebSocketServer = require("ws").Server;
 var wss = new WebSocketServer({server: server});
+var mongo = require('mongoskin');
+var db = mongo.db('mongodb://RogovS:5mongo@ds049641.mongolab.com:49641/task-5');
 
 wss.on("connection", function(ws) {
   console.log("websocket connection open");
@@ -24,19 +26,14 @@ wss.on("connection", function(ws) {
       data: "hello world"
   };
   ws.send(JSON.stringify(msg));
- console.log("websocket messsage received");
+ 
   ws.onmessage = function(d) {
     msg = JSON.parse(d.data);
     console.log("websocket messsage received");
     console.log(msg);
   };
   
-});
-
-var mongo = require('mongoskin');
-var db = mongo.db('mongodb://RogovS:5mongo@ds049641.mongolab.com:49641/task-5');
-
-console.log('test');
+  console.log('test');
 db.collection('TestCollection').update(
 {
    ip:"userToUpdate"
@@ -48,4 +45,6 @@ db.collection('TestCollection').update(
 {
    upsert:true
 });
-console.log('test');
+  
+});
+
