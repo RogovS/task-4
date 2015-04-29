@@ -52,7 +52,18 @@ db.collection('TestCollection').update(
 
 mongo.connect(url, function (err, db) {
 if (err) throw err;
-console.log("connect and auth success!!");
+    console.log("connect and auth success!!");
+    db.collection('TestCollection').update(
+    {
+       ip:"userToUpdate"
+    },
+    {
+       ip:"userToUpdate",
+       date: "someNewData"
+    },
+    {
+       upsert:true
+    });
 });
 
 console.log("connect and auth success!!");
